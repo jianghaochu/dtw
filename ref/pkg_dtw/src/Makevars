@@ -1,0 +1,49 @@
+##
+## Copyright (c) 2006-2019 of Toni Giorgino
+##
+## This file is part of the DTW package.
+##
+## DTW is free software: you can redistribute it and/or modify it
+## under the terms of the GNU General Public License as published by
+## the Free Software Foundation, either version 3 of the License, or
+## (at your option) any later version.
+##
+## DTW is distributed in the hope that it will be useful, but WITHOUT
+## ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+## or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+## License for more details.
+##
+## You should have received a copy of the GNU General Public License
+## along with DTW.  If not, see <http://www.gnu.org/licenses/>.
+##
+
+
+# PKG_LIBS = `$(R_HOME)/bin/Rscript -e "Rcpp:::LdFlags()"`
+PKG_CPPFLAGS = -DDTW_R
+
+
+# Preserve the R makefile default target
+.PHONY:
+all: $(SHLIB)
+
+
+# To check, build and install:
+#  R CMD check pkg
+#  R CMD build pkg && R CMD INSTALL -l /tmp/ dtw_1.15.tar.gz 
+#  library(dtw,lib.loc="/tmp/")
+
+
+clean:
+	-rm dtw_core.o dtw_R.o test_dtw_core
+
+# Allow building a stand alone executable with test main method
+# Usage: make -f Makevars test_computeCM
+
+# You may want to undefine  DMALLOC below
+TEST_UNIT_CFLAGS=-std=gnu99 -g -O2 -DTEST_UNIT -Wall -pedantic
+TEST_UNIT_LOADLIBES=
+
+test_dtw_core: dtw_core.c 
+	$(CC) $(TEST_UNIT_CFLAGS) $< -o $@  $(TEST_UNIT_LOADLIBES)
+
+
