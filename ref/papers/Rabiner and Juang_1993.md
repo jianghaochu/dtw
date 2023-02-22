@@ -13,9 +13,17 @@ Potential change to be made:
 If the original norm is $N$, then the new norm will be given by
 
 $$
-\sum_{t=1}^Nw_t, \text{ where} \\
-~\\
-w_t=w_1 \forall t\in\{...\},w_2\forall t\in\{...\}...
+\sum_{t=1}^Nw_t
+$$
+
+where
+
+$$
+w_t=\begin{cases}
+     c_1 & \forall t\in\{...\}\\
+     c_2 & \forall t\in\{...\}\\
+     ...
+    \end{cases}
 $$
 
 ### Distance measure
