@@ -54,7 +54,7 @@ weighted_dtw_distance <- function(x, y, tx, ty, p = 1, g = 0.25) {
   # thus, m_c is the midpoint of max(i)
   
   # MLWF = 1 / (1 + exp(-g*( abs(tx-ty)/(length(x)+length(y)) )))
-  MLWF = 1 / (1 + exp(-g*( abs(tx-ty) - max(length(x)-length(y))/2 )))
+  MLWF = 1 / (1 + exp(-g*( abs(tx-ty) - max(length(x), length(y))/2 )))
   return(gamma * MLWF)
 }
 
