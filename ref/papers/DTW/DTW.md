@@ -42,7 +42,7 @@ __[shapeDTW](https://github.com/jiapingz/shapeDTW/tree/master/shapeDTW)__: usefu
 - [samplingSequencesIdx](https://github.com/jiapingz/shapeDTW/blob/master/shapeDTW/sampling/samplingSequencesIdx.m) used in shapeDTW
 - [calcDescriptor](https://github.com/jiapingz/shapeDTW/blob/master/shapeDTW/sampling/samplingSequencesIdx.m) used in shapeDTW
 - [dpfast](https://github.com/jiapingz/shapeDTW/blob/master/shapeDTW/ElasticMeasure/DanEllis/dpfast.m) used in shapeDTW
-- 
+
 ### 3. Why not Synthetic Control
 
 + Think of simple synthetic control
