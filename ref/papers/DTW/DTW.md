@@ -35,7 +35,14 @@ Both shapeDTW and weighted DTW focus on the local data patterns. They do not con
 __WDTW__ penalizes the points according to the phase difference between a test point and a reference point to prevent minimum distance distortion by outliers. The key idea is that if the phase difference is low, smaller weight is imposed because neighboring points are important, otherwise larger wright is imposed:
 $$d_w(a_i, b_j) = ||w_{|i-j|} (a_i - b_j)||_p$$
 
-
+__[shapeDTW](https://github.com/jiapingz/shapeDTW/tree/master/shapeDTW)__: useful MATLAB code, which can be converted to R/Python code in ChatGPT.
+- [shapeDTW function](https://github.com/jiapingz/shapeDTW/blob/master/shapeDTW/ElasticMeasure/shapeDTW/shapeDTW.m) with shape descriptors calculated within the function.
+- [shapeDTW2 function] (https://github.com/jiapingz/shapeDTW/blob/master/shapeDTW/ElasticMeasure/shapeDTW/shapeDTW2.m) with shape descriptors being input parameters.
+- [Demo shapeDTW](https://github.com/jiapingz/shapeDTW/blob/master/shapeDTW/demo_shapeDTW.m)
+- [samplingSequencesIdx](https://github.com/jiapingz/shapeDTW/blob/master/shapeDTW/sampling/samplingSequencesIdx.m) used in shapeDTW
+- [calcDescriptor](https://github.com/jiapingz/shapeDTW/blob/master/shapeDTW/sampling/samplingSequencesIdx.m) used in shapeDTW
+- [dpfast](https://github.com/jiapingz/shapeDTW/blob/master/shapeDTW/ElasticMeasure/DanEllis/dpfast.m) used in shapeDTW
+- 
 ### 3. Why not Synthetic Control
 
 + Think of simple synthetic control
