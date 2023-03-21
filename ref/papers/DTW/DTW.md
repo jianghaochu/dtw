@@ -10,9 +10,7 @@ $$d_w(a_i, b_j) = ||w_{|i-j|} (a_i - b_j)||_p$$
 
 + Think of simple synthetic control
   
-  $$
-  y_t^T=\beta_0+\beta_1y_t^{C_1}+\cdots+\beta_ny_t^{C_n}
-  $$
+  $$y_t^T=\beta_0+\beta_1y_t^{C_1}+\cdots+\beta_ny_t^{C_n}$$
   
   + Treatment is a linear combination of controls
   
