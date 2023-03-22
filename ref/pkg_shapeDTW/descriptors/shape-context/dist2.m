@@ -21,6 +21,8 @@ if dimx ~= dimc
 	error('Data dimension does not match dimension of centres')
 end
 
+% ellipsis (...) is used for continuing long statements
+% https://www.mathworks.com/help/matlab/matlab_prog/continue-long-statements-on-multiple-lines.html
 n2 = (ones(ncentres, 1) * sum((x.^2)', 1))' + ...
   		ones(ndata, 1) * sum((c.^2)',1) - ...
   		2.*(x*(c'));
