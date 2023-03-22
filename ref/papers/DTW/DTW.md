@@ -5,9 +5,10 @@ Let's assume we have two sequences like the following:
 $$X = x_1, x_2, \dots, x_i, \dots, x_n$$
 $$Y = y_1, y_2, \dots, y_i, \dots, y_m$$
 
-The sequences $X$ and $Y$ can be arranged to form an $n\times m$ grid, where each point $(i,j)$ is the alignment between $x_i$ and $y_j$. A warping path $W$ maps the elements of $X$ and $Y$ to minimize the distance between them. The warping path $W$ is a sequence of grid points $(i,j)$. The optimal path to $(i_k, j_k)$ can be computed by using recursive formula given by
-$$D_{\min}(i_k, j_k) = d(i_k, j_k\mid i_{k-1}, j_{k-1}) + \min D_{\min}(i_{k-1}, j_{k-1})$$
-where $d$ is the Euclidean distance. The overall path cost is $D = \sum_k d(i_k, j_k)$.
+The sequences $X$ and $Y$ can be arranged to form an $n\times m$ grid, where each point $(i,j)$ is the alignment between $x_i$ and $y_j$. A warping path $W$ maps the elements of $X$ and $Y$ to minimize the distance between them. The warping path $W$ is a sequence of grid points $(i,j)$. The optimal path to $(i, j)$ can be computed by using recursive formula given by
+$$\text{DTW|(X, Y) = \sqrt {\gamma(i, j)}$$
+$$\gamma(i, j) = d(x_i, y_j) + \min (\gamma(i-1, j-1), \gamma(i, j-1), \gamma(i-1, j))$$
+where $d$ is the Euclidean distance. 
 
 For efficiency purposes, it’s important to limit the number of possible warping paths:
 - Boundary Condition: This constraint ensures that the warping path begins with the start points of both signals and terminates with their endpoints.
