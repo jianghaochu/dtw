@@ -6,7 +6,7 @@ $$X = x_1, x_2, \dots, x_i, \dots, x_n$$
 $$Y = y_1, y_2, \dots, y_i, \dots, y_m$$
 
 The sequences $X$ and $Y$ can be arranged to form an $n\times m$ grid, where each point $(i,j)$ is the alignment between $x_i$ and $y_j$. A warping path $W$ maps the elements of $X$ and $Y$ to minimize the distance between them. The warping path $W$ is a sequence of grid points $(i,j)$. The optimal path to $(i, j)$ can be computed by using recursive formula given by
-$$\text{DTW|(X, Y) = \sqrt {\gamma(i, j)}$$
+$$\text{DTW}(X, Y) = \sqrt {\gamma(i, j)}$$
 $$\gamma(i, j) = d(x_i, y_j) + \min (\gamma(i-1, j-1), \gamma(i, j-1), \gamma(i-1, j))$$
 where $d$ is the Euclidean distance. 
 
