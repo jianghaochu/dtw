@@ -8,6 +8,7 @@
 
 # Inspired by great performance of HOG descriptor on 2D images and HOG3D
 # descriptors on 3D videos, we introduce HOG1D into time series with L2 normalization
+# https://towardsdatascience.com/hog-histogram-of-oriented-gradients-67ecd887675f
 descriptorHOG1D <- function(sequences, param=NULL) {
   
   # Check if param is provided, otherwise use default parameter values
