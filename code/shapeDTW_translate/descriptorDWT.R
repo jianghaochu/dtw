@@ -47,7 +47,7 @@ descriptorDWT <- function(subsequence, param) {
     listCoef <- fwt1step(s, h, g)
     sout <- listCoef[[1]]
     dout <- listCoef[[2]]
-    w <- rbind(c(sout, dout), w)
+    w <- rbind(sout, dout, w) # semicolon in MATLAB suggests new row
     rep <- t(w)
     return(rep)
   }
