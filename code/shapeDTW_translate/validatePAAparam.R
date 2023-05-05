@@ -2,7 +2,7 @@
 validatePAAparam <- function(param) {
   
   if (missing(param) || !is.list(param)) {
-    val_param <- list(segNum = 10, segLen = NULL, priority = "segNum")
+    val_param <- list('segNum' = 10, 'segLen' = NULL, 'priority' = "segNum")
     return(val_param)
   }
   
@@ -31,22 +31,22 @@ validatePAAparam <- function(param) {
   if (!is.null(param$priority)) {
     val_param$priority <- param$priority
   } else {
-    val_param$priority <- "segNum"
+    val_param$priority <- 'segNum'
   }
   
   switch(val_param$priority,
-         segNum = {
+         'segNum' = {
            if (is.null(val_param$segNum) || val_param$segNum <= 0) {
              val_param$segNum <- 10
            }
          },
-         segLen = {
+         'segLen' = {
            if (is.null(val_param$segLen) || val_param$segLen <= 0) {
              val_param$segLen <- 5
            }
          },
          {
-           val_param$priority <- "segNum"
+           val_param$priority <- 'segNum'
            if (is.null(val_param$segNum) || val_param$segNum <= 0) {
              val_param$segNum <- 10
            }
