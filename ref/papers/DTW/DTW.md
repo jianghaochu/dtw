@@ -66,6 +66,7 @@ function of the phase difference between two points systematically
     $$
     D_A(d_i^a)=\frac{(a_i-a_{i-1})+(a_{i+1}-a_{i-1})/2}{2},\;1<i<m.
     $$
+    + $D_A(d_i^a)$ describes the "slope" of a line passing through $a_i$; $(a_i - a_{i-1}) + (a_{i+1}-a_{i-1})/2$ probably approximate $(a_{i+1}-a_{i-1})$ and $2 = (i+1) - (i-1)$.
     + Apply WDTW to the transformed points, $d_i^a$. 
 
 
