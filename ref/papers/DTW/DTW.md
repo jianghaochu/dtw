@@ -42,31 +42,46 @@ Jeong et al. 2011. Pattern Recognition. Weighted dynamic time warping for time s
 Notions
 
 + Sequences: $A\;(= a_1, a_2, \dots, a_m)$ is a sequence with length $m$ and $B\;(= b_1, b_2, \dots, b_n)$ a sequence with length $n$.
+
 + $I_p$ Norm: $||\cdot||_p$
+
 + $m$-by-$n$ Distance Matrix: Distance between $a_i$ and $b_j$
+
     $$d_w(a_i, b_j) = ||w_{|i-j|} (a_i - b_j)||_p$$
+
     where $w_{|i-j|}$ is the positive weight between two points. 
-    + The weight value will be determined based on the
-phase difference $|i-j|$. In other words, if the two points are
-near, smaller weights can be imposed.
+
+    + The weight value will be determined based on the phase difference $|i-j|$. In other words, if the two points are near, smaller weights can be imposed.
+
 + Weighted DTW
+
     $${\rm WDTW}_p=\sqrt[p]{\gamma^\ast(i,j)}$$
-    where $\gamma^\ast(i,j)=||w_{|i-j|}(a_i-b_j)||_p+\min\left\{\gamma^\ast(i-1,j-1),\gamma^\ast(i-1,j),\gamma^\ast(i,j-1)\right\}$
+
+    where 
+    
+    $$\gamma^\ast(i,j)=||w_{|i-j|}(a_i-b_j)||_p+\min\left\{\gamma^\ast(i-1,j-1),\gamma^\ast(i-1,j),\gamma^\ast(i,j-1)\right\}.$$
+
 + Modified Logistic Weight Function: Assign weights as a
 function of the phase difference between two points systematically
+    
     $$w_{(i)}=\frac{w_{\max}}{1+\exp\left[-g\times(i-m_c)\right]}$$
+    
     where $i=1,\dots,m$, $m$ is the length of a sequence, $m_c$ is the midpoint, and $w_{\max}$ is the upper bound for the weight parameter.
     
     + For simplicity, let $w_{\max}=1$.
+    
     + $g$ is an empirical constant, controlling for the curvature (slope) of the function, reflecting the level of penalization for a larger phase difference.
+
 + Weighted Derivative DTW
     
     + Because DTW may try to explain variability in the Y-axis by warping the X-axis, this may lead to the unexpected *singularities*, which are alignments between a point of a series with multiple points of the other series, and unintuitive alignments.
+    
     + To overcome those weaknesses of DTW, DDTW transforms the original points into the higher level features, which contain the shape information of a sequence. Let $m$ be the length of sequence $A$. The point $a_i$ in $A$ is given by
-    $$
-    D_A(d_i^a)=\frac{(a_i-a_{i-1})+(a_{i+1}-a_{i-1})/2}{2},\;1<i<m.
-    $$
+    
+    $$D_A(d_i^a)=\frac{(a_i-a_{i-1})+(a_{i+1}-a_{i-1})/2}{2},\;1<i<m.$$
+    
     + $D_A(d_i^a)$ describes the "slope" of a line passing through $a_i$; $(a_i - a_{i-1}) + (a_{i+1}-a_{i-1})/2$ probably approximate $(a_{i+1}-a_{i-1})$ and $2 = (i+1) - (i-1)$.
+    
     + Apply WDTW to the transformed points, $d_i^a$. 
 
 
