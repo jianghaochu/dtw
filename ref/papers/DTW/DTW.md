@@ -59,7 +59,7 @@ Notions
 
     where 
     
-    $$\gamma^\ast(i,j)=||w_{|i-j|}(a_i-b_j)||_p+\min\left\{\gamma^\ast(i-1,j-1),\gamma^\ast(i-1,j),\gamma^\ast(i,j-1)\right\}.$$
+    $$\gamma^\ast(i,j)=||w_{|i-j|}(a_i-b_j)||_p+\min\{\gamma^\ast(i-1,j-1),\gamma^\ast(i-1,j),\gamma^\ast(i,j-1)\}.$$
 
 + Modified Logistic Weight Function: Assign weights as a
 function of the phase difference between two points systematically
@@ -78,9 +78,9 @@ function of the phase difference between two points systematically
     
     + To overcome those weaknesses of DTW, DDTW transforms the original points into the higher level features, which contain the shape information of a sequence. Let $m$ be the length of sequence $A$. The point $a_i$ in $A$ is given by
     
-    $$D_A(d_i^a)=\frac{(a_i-a_{i-1})+(a_{i+1}-a_{i-1})/2}{2},\;1<i<m.$$
+    $$D_A(d_i^a)=\frac{(a_i-a_{i-1})+(a_{i+1}-a_{i-1})/2}{2},\space 1<i<m.$$
     
-    + $D_A(d_i^a)$ describes the "slope" of a line passing through $a_i$; $(a_i - a_{i-1}) + (a_{i+1}-a_{i-1})/2$ probably approximate $(a_{i+1}-a_{i-1})$ and $2 = (i+1) - (i-1)$.
+    + $D_A(d_i^a)$ describes the "slope" of a line passing through $a_i$, where $(a_i - a_{i-1}) + (a_{i+1}-a_{i-1})/2$ probably approximate $(a_{i+1}-a_{i-1})$ and denomiator is $2 = (i+1) - (i-1)$.
     
     + Apply WDTW to the transformed points, $d_i^a$. 
 
