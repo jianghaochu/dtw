@@ -13,7 +13,7 @@ NumericMatrix dist2(NumericMatrix x, NumericMatrix c) {
     int dimc = c.ncol();
 
     // Check that the dimensions of x and c match
-    if ((dimx < dimc) | (dimx > dimc)) {
+    if (dimx != dimc) {
         Rprintf("Data dimension does not match dimension of centres");
     }
 
@@ -23,4 +23,13 @@ NumericMatrix dist2(NumericMatrix x, NumericMatrix c) {
     // for (i in 1:ncentres) {
     //     n2[, i] <- colSums((t(x) - t(c)[,i])^2)
     // }
+
+    NumericMatrix n2(ndata, ncentres);
+    for (int i=0; i<ncentres; i++) {
+        for (int j=0; j<ndata; j++) {
+            n2(j, i) = std::inner_prod(x(j, _) - c(i, _));
+        }
+    }
+
+    return n2;
 }
