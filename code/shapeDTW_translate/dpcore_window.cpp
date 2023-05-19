@@ -4,16 +4,19 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-List dpcore(NumericMatrix M, NumericMatrix C, Nullable<int> ws = R_NilValue) // <<< --- Modified
+List dpcore_window(NumericMatrix M, NumericMatrix C, Nullable<NumericVector> ws = R_NilValue) // <<< --- Modified
 {
     int i, j, ncosts, cols, rows;
 	double* costs;
 	int* steps;
 
+    NumericVector tmp;
+    int wss;
 	if (ws.isNotNull()) {
-		int _ws = int(ws);
+        tmp = (NumericVector)ws;
+		wss = (int)tmp(0);
 	} else {
-		int _ws = 0;
+		wss = 0;
 	}
 
 	/* setup costs */
@@ -46,8 +49,8 @@ List dpcore(NumericMatrix M, NumericMatrix C, Nullable<int> ws = R_NilValue) // 
 		
 		/*Modified*/
 		if (ws.isNotNull()) {
-			int i_start = std::max(0, j-_ws);
-			int i_end = std::min(rows, j+_ws+1);
+			i_start = std::max(0, j-wss);
+			i_end = std::min(rows, j+wss+1);
 		}
 
 		/*Modified*/
