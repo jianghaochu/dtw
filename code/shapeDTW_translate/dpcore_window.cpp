@@ -1,5 +1,6 @@
 #include <limits>
 #include <Rcpp.h>
+#include <cstdlib>
 
 using namespace Rcpp;
 
@@ -9,15 +10,6 @@ List dpcore_window(NumericMatrix M, NumericMatrix C, Nullable<NumericVector> ws 
     int i, j, ncosts, cols, rows;
 	double* costs;
 	int* steps;
-
-    NumericVector tmp;
-    int wss;
-	if (ws.isNotNull()) {
-        tmp = (NumericVector)ws;
-		wss = (int)tmp(0);
-	} else {
-		wss = 0;
-	}
 
 	/* setup costs */
 	int ii, crows;
@@ -33,6 +25,15 @@ List dpcore_window(NumericMatrix M, NumericMatrix C, Nullable<NumericVector> ws 
 
 	cols = M.ncol();
 	rows = M.nrow();
+    
+    NumericVector tmp;
+    int wss;
+	if (ws.isNotNull()) {
+        tmp = (NumericVector)ws;
+		wss = (int)tmp(0);
+	} else {
+        wss = std::max(cols, rows) + 1;
+    }
 
 	/* do dp */
 	NumericMatrix pD(rows, cols), pP(rows, cols);
@@ -57,7 +58,7 @@ List dpcore_window(NumericMatrix M, NumericMatrix C, Nullable<NumericVector> ws 
 	    for (i = i_start; i < i_end; ++i) { // <<< --- Modified
 			d1 = M(i, j);
 			for (k = 0; k < ncosts; ++k) {
-				if (i >= steps[2*k] && j >= steps[2*k+1]) {
+				if (i >= steps[2*k] && j >= steps[2*k+1] && std::abs((i-steps[2*k]) - (j-steps[2*k+1])) <= wss) {
 					d2 = costs[k]*d1 + pD((i-steps[2*k]), (j-steps[2*k+1]));
 					if (d2 < v) {
 						v = d2;
