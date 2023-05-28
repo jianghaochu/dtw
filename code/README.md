@@ -7,3 +7,5 @@ Q & A:
 + Default window type for dpcore_window is sakoeChibaWindow
 
 + Require further test on different datasets
+
++ The distance calculation in ``dist.cpp`` is not aligned with ``dist2.R``
