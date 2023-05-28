@@ -1,5 +1,5 @@
 calcDescriptor <- function(subsequence, descriptorName = "HOG1D", param = NULL) {
-  if (length(dim(subsequence)) != 1) {
+  if (ncol(subsequence) != 1) {
     stop("The input subsequence should be one-dimensional\n")
   }
   
