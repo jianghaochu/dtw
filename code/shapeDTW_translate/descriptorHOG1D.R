@@ -98,7 +98,7 @@ descriptorHOG1D <- function(sequences, param=NULL) {
                 dy <- sequences[eidx] - sequences[sidx]
                 ang <- atan2(dy, dx)
                 mag <- dy/dx
-              }
+              },
               "centered" = {
                 sidx <- cidx - 1
                 eidx <- cidx + 1
@@ -148,9 +148,15 @@ descriptorHOG1D <- function(sequences, param=NULL) {
   # descriptor <- descriptor / (matrix(sqrt(rowSums(descriptor^2)), ncol = nbins, byrow = TRUE) + epsilon)
   
   subdescriptors <- descriptor
+    
   descriptor <- t(descriptor)
-  descriptor <- as.vector(descriptor)
+  descriptor <- matrix(descriptor, nrow = 1, ncol = nBlock * nbins)
   
+#   return(descriptor)
+  out <- list("subdescriptors"=subdescriptors, "descriptor"=descriptor)
+    
+  return(out)
+    
   #epsilon <- 1.0e-6
   #descriptor <- descriptor / (sqrt(sum(descriptor * descriptor)) + epsilon)
 }
