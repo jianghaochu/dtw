@@ -144,19 +144,15 @@ descriptorHOG1D <- function(sequences, param=NULL) {
       )
     }
   }
+  # l2: normalization: 
   # epsilon <- 1.0e-6
   # descriptor <- descriptor / (matrix(sqrt(rowSums(descriptor^2)), ncol = nbins, byrow = TRUE) + epsilon)
+   #descriptor <- descriptor / (sqrt(sum(descriptor * descriptor)) + epsilon)
   
   subdescriptors <- descriptor
-    
-  descriptor <- t(descriptor)
-  descriptor <- matrix(descriptor, nrow = 1, ncol = nBlock * nbins)
-  
-#   return(descriptor)
-  out <- list("subdescriptors"=subdescriptors, "descriptor"=descriptor)
-    
+  descriptor <- matrix(t(descriptor), nrow = 1, ncol = nBlock * nbins)
+  out <- list("subdescriptors" = subdescriptors, "descriptor" = descriptor)
+
   return(out)
-    
-  #epsilon <- 1.0e-6
-  #descriptor <- descriptor / (sqrt(sum(descriptor * descriptor)) + epsilon)
+  
 }
