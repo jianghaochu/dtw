@@ -2,13 +2,13 @@ whichInterval <- function(sequence, number) {
   len <- length(sequence)
   
   if (sequence[1] > sequence[2]) {
-    increasing <- FALSE
+    increasing <- 'FALSE'
   } else {
-    increasing <- TRUE
+    increasing <- 'TRUE'
   }
   
   switch(increasing,
-         TRUE = {
+         'TRUE' = {
            for (i in 1:(len-1)) {
              if (sequence[i] <= number && sequence[i+1] > number) {
                n <- i
@@ -22,7 +22,7 @@ whichInterval <- function(sequence, number) {
              }
            }
          },
-         FALSE = {
+         'FALSE' = {
            for (i in 1:(len-1)) {
              if (sequence[i] >= number && sequence[i+1] < number) {
                n <- i
