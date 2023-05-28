@@ -45,7 +45,7 @@ PAA <- function(subsequence, param) {
   
   segs <- numeric(segNum)
   for (i in 1:segNum) {
-    segs[i] <- mean(subsequence[idx_seg[i] + 1:idx_seg[i + 1]])
+    segs[i] <- mean(subsequence[(idx_seg[i] + 1):idx_seg[i + 1]])
   }
   
   out <- list(
