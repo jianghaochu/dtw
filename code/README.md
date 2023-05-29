@@ -27,7 +27,7 @@
 + Add [``test_shapeDTW.ipynb``](https://github.com/jianghaochu/dtw/blob/main/code/test_shapeDTW.ipynb)
 + Add [``shapeDTW.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/shapeDTW.R)
 + Add [``plotElasticMatching.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/plotElasticMatching.R)
-+ Add [``wpath2mat.R``]()https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/wpath2mat.R
++ Add [``wpath2mat.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/wpath2mat.R)
 + Add [``demo_shapeDTW.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/demo_shapeDTW.R)
 + Add [``zNormalizeTS.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/zNormalizeTS.R)
 + Modified [``DTWfast.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/DTWfast.R)
