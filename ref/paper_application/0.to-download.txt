@@ -1,0 +1,22 @@
+Determinants of international transmission of business cycles to Turkish economy
+https://www.sciencedirect.com/science/article/abs/pii/S0264999313004367
+
+Bitcoin: Bubble that bursts or Gold that glitters?
+https://www.sciencedirect.com/science/article/abs/pii/S0165176521002196
+
+Development of an efficient cluster-based portfolio optimization model under realistic market conditions
+https://link.springer.com/article/10.1007/s00181-019-01802-5
+
+Decoupling and recoupling in the crude oil price benchmarks: An investigation of similarity patterns
+https://www.sciencedirect.com/science/article/abs/pii/S0140988320303765
+- What can be learned from the historical trend of crude oil prices? An ensemble approach to crude oil price forecasting
+- https://www.sciencedirect.com/science/article/abs/pii/S0140988323002347
+
+Measuring hidden demand and price behavior from US outbound health tourism spending
+https://journals.sagepub.com/doi/abs/10.1177/13548166211067925
+
+Trimmed fuzzy clustering of financial time series based on dynamic time warping
+https://link.springer.com/article/10.1007/s10479-019-03284-1
+
+Food price dynamics and regional clusters: machine learning analysis of egg prices in China
+https://www.emerald.com/insight/content/doi/10.1108/CAER-01-2022-0003/full/html
