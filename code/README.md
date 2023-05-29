@@ -23,15 +23,15 @@
 ### Update - 05/28/2023
 
 + Add [``ValidateUtility.ipynb``](https://github.com/jianghaochu/dtw/blob/main/code/ValidateUtility.ipynb)
-+ Add ``demo_shapeDTW.ipynb``
-+ Add ``test_shapeDTW.ipynb``
-+ Add ``shapeDTW.R``
-+ Add ``plotElasticMatching.R``
-+ Add ``wpath2mat.R``
-+ Add ``demo_shapeDTW.R``
-+ Add ``zNormalizeTS.R``
-+ Modified ``DTWfast.R``
-+ Modified ``samplingSequencesIdx.R``
-+ Modified ``descriptorHOG1D.R``
-+ Modified ``calcDescriptor.R``
-+ Modified ``hist_cost_2.R``
++ Add [``demo_shapeDTW.ipynb``](https://github.com/jianghaochu/dtw/blob/main/code/demo_shapeDTW.ipynb)
++ Add [``test_shapeDTW.ipynb``](https://github.com/jianghaochu/dtw/blob/main/code/test_shapeDTW.ipynb)
++ Add [``shapeDTW.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/shapeDTW.R)
++ Add [``plotElasticMatching.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/plotElasticMatching.R)
++ Add [``wpath2mat.R``]()https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/wpath2mat.R
++ Add [``demo_shapeDTW.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/demo_shapeDTW.R)
++ Add [``zNormalizeTS.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/zNormalizeTS.R)
++ Modified [``DTWfast.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/DTWfast.R)
++ Modified [``samplingSequencesIdx.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/samplingSequencesIdx.R)
++ Modified [``descriptorHOG1D.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/descriptorHOG1D.R)
++ Modified [``calcDescriptor.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/calcDescriptor.R)
++ Modified [``hist_cost_2.R``](https://github.com/jianghaochu/dtw/blob/main/code/shapeDTW_translate/hist_cost_2.R)
