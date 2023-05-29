@@ -1,16 +1,28 @@
-### Q & A - 05/27/2023
+## To-do List
+- [ ] Understanding of HOG1
 
-+ Name of the new algorithm: Time-dependent Weighted Dynamic Time Warping (TD-WDTW)
+- [ ] Comparison table presenting different descriptors
 
-+ For self-defined window function, there are no path differences across different DTW algorithms but differences exist across varying window size. Is it what we expected? More details to be discussed.
+- [ ] Comparison table presenting different distance metrics (e.g., Euclidean, Chi-square)
 
-+ Default window type for dpcore_window is sakoeChibaWindow
+- [ ] Do we need to follow some coding style rules (As opening scripts, 
+I see a lot of squiggly underlines--coding suggestions--in VS Code)
 
-+ Require further test on different datasets
 
-+ The distance calculation in ``dist.cpp`` is not aligned with ``dist2.R``
+## Q & A - 05/27/2023
 
-### Update - 05/27/2023
+- [ ] Name of the new algorithm: Time-dependent Weighted Dynamic Time Warping (TD-WDTW)
+
+- [ ] For self-defined window function, there are no path differences across different DTW algorithms but differences exist across varying window size. Is it what we expected? More details to be discussed.
+
+- [ ] Default window type for dpcore_window is sakoeChibaWindow
+
+- [ ] Require further test on different datasets
+
+- [ ] The distance calculation in ``dist.cpp`` is not aligned with ``dist2.R``
+
+
+## Update - 05/27/2023
 
 + Add [``WeightFunc.ipynb``](https://github.com/jianghaochu/dtw/blob/main/code/WeightFunc.ipynb)
 + Add [``WeightFunc.R``](https://github.com/jianghaochu/dtw/blob/main/code/WeightFunc.R)
@@ -20,7 +32,7 @@
 + Modified [``CalculateDist``](https://github.com/jianghaochu/dtw/blob/main/code/CalculateDist.ipynb)
 
 
-### Update - 05/28/2023
+## Update - 05/28/2023
 
 + Add [``ValidateUtility.ipynb``](https://github.com/jianghaochu/dtw/blob/main/code/ValidateUtility.ipynb)
 + Add [``demo_shapeDTW.ipynb``](https://github.com/jianghaochu/dtw/blob/main/code/demo_shapeDTW.ipynb)
