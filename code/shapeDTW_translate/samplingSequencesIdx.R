@@ -32,24 +32,27 @@ samplingSequencesIdx <- function(sensordata, seqlen, idx) {
     # Check if the subsequence is within the bounds of the input matrix
     if(imask[1] <= 0 && imask[length(imask)] <= nTimeStamps) {
       tmp <- matrix(rep(sensordata[1, ], (1-imask[1])*nDims), ncol=nDims, byrow=TRUE)
-      isequence <- rbind(tmp, sensordata[1:imask[length(imask)], ])
-    } else if(imask[length(imask)] > nTimeStamps && imask[1] >= 1) {
+      isequence <- rbind(tmp, as.matrix(sensordata[1:imask[length(imask)], ]))
+    } 
+    else if(imask[length(imask)] > nTimeStamps && imask[1] >= 1) {
       tmp <- matrix(rep(sensordata[nTimeStamps, ], (imask[length(imask)]-nTimeStamps)*nDims), ncol=nDims, byrow=TRUE)
-      isequence <- rbind(sensordata[imask[1]:nTimeStamps, ], tmp)
-    } else if(imask[1] <= 0 && imask[length(imask)] > nTimeStamps) {
+      isequence <- rbind(as.matrix(sensordata[imask[1]:nTimeStamps, ]), tmp)
+    } 
+    else if(imask[1] <= 0 && imask[length(imask)] > nTimeStamps) {
       tmp1 <- matrix(rep(sensordata[1, ], (1-imask[1])*nDims), ncol=nDims, byrow=TRUE)
       tmp2 <- matrix(rep(sensordata[nTimeStamps, ], (imask[length(imask)]-nTimeStamps)*nDims), ncol=nDims, byrow=TRUE)
-      isequence <- rbind(tmp1, sensordata, tmp2)
-    } else {
-      isequence <- sensordata[imask, ]
+      isequence <- rbind(tmp1, as.matrix(sensordata), tmp2)
+    } 
+    else {
+      isequence <- as.matrix(sensordata[imask, ])
     }
     
     cnt <- cnt + 1
     tAnchor[cnt] <- iloc
-    sequences <- rbind(sequences, list(isequence))
+    sequences[[cnt]] <- isequence
   }
   
   tAnchor <- tAnchor[1:cnt]
   
-  return(list(sequences, tAnchor))
+  return(list("subsequences" = sequences, "tAnchor" = tAnchor))
 }
