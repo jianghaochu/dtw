@@ -12,17 +12,17 @@
 
 ### Update - 05/27/2023
 
-+ Add [``WeightFunc.ipynb``][https://github.com/jianghaochu/dtw/blob/main/code/WeightFunc.ipynb]
-+ Add [``WeightFunc.R``][https://github.com/jianghaochu/dtw/blob/main/code/WeightFunc.R]
-+ Modified [``dpfast.R``][https://github.com/jianghaochu/dtw/blob/main/code/dpfast.R]
-+ Modified [``dist2.R``][https://github.com/jianghaochu/dtw/blob/main/code/dist2.R]
-+ Modified [``DataSimulation.ipynb``][https://github.com/jianghaochu/dtw/blob/main/code/DataSimulation.ipynb]
-+ Modified [``CalculateDist``][https://github.com/jianghaochu/dtw/blob/main/code/CalculateDist.ipynb]
++ Add [``WeightFunc.ipynb``](https://github.com/jianghaochu/dtw/blob/main/code/WeightFunc.ipynb)
++ Add [``WeightFunc.R``](https://github.com/jianghaochu/dtw/blob/main/code/WeightFunc.R)
++ Modified [``dpfast.R``](https://github.com/jianghaochu/dtw/blob/main/code/dpfast.R)
++ Modified [``dist2.R``](https://github.com/jianghaochu/dtw/blob/main/code/dist2.R)
++ Modified [``DataSimulation.ipynb``](https://github.com/jianghaochu/dtw/blob/main/code/DataSimulation.ipynb)
++ Modified [``CalculateDist``](https://github.com/jianghaochu/dtw/blob/main/code/CalculateDist.ipynb)
 
 
 ### Update - 05/28/2023
 
-+ Add [``ValidateUtility.ipynb``][https://github.com/jianghaochu/dtw/blob/main/code/ValidateUtility.ipynb]
++ Add [``ValidateUtility.ipynb``](https://github.com/jianghaochu/dtw/blob/main/code/ValidateUtility.ipynb)
 + Add ``demo_shapeDTW.ipynb``
 + Add ``test_shapeDTW.ipynb``
 + Add ``shapeDTW.R``
