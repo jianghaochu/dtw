@@ -10,6 +10,15 @@
 
 + The distance calculation in ``dist.cpp`` is not aligned with ``dist2.R``
 
+### Update - 05/27/2023
+
++ Add ``WeightFunc.ipynb``
++ Add ``WeightFunc.R``
++ Modified ``dpfast.R``
++ Modified ``dist2.R``
++ Modified ``DataSimulation.ipynb``
++ Modified ``CalculateDist``
+
 
 ### Update - 05/28/2023
 
