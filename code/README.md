@@ -1,4 +1,4 @@
-Q & A:
+### Q & A - 05/27/2023
 
 + Name of the new algorithm: Time-dependent Weighted Dynamic Time Warping (TD-WDTW)
 
@@ -9,3 +9,20 @@ Q & A:
 + Require further test on different datasets
 
 + The distance calculation in ``dist.cpp`` is not aligned with ``dist2.R``
+
+
+### Update - 05/28/2023
+
++ Add ``ValidateUtility.ipynb``
++ Add ``demo_shapeDTW.ipynb``
++ Add ``test_shapeDTW.ipynb``
++ Add ``shapeDTW.R``
++ Add ``plotElasticMatching.R``
++ Add ``wpath2mat.R``
++ Add ``demo_shapeDTW.R``
++ Add ``zNormalizeTS.R``
++ Modified ``DTWfast.R``
++ Modified ``samplingSequencesIdx.R``
++ Modified ``descriptorHOG1D.R``
++ Modified ``calcDescriptor.R``
++ Modified ``hist_cost_2.R``
