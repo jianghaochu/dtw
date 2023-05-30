@@ -44,19 +44,74 @@ lenp <- nrow(p)
 lenq <- nrow(q)
 
 # HOG1D
-hog <- validateHOG1Dparam()
-hog$cells <- c(1, round(seqlen/2)-1)
-hog$overlap <- 0
-hog$xscale <- 0.1
-descriptorSetting <- list(method = "HOG1D", param = hog)
+#hog <- validateHOG1Dparam()
+#hog$cells <- c(1, round(seqlen/2)-1)
+#hog$overlap <- 0
+#hog$xscale <- 0.1
+#descriptorSetting <- list(method = "HOG1D", param = hog)
 
-# Descriptor
+# Descriptor: PAA
+paa <- validatePAAdescriptorparam() # list(segNum = 10, segLen = NULL, priority = "segNum")
+paa$priority <- "segNum"
+segNum <- ceiling(seqlen/5)
+paa$segNum <- segNum # segNum = 10
+descriptorSetting <- list(method = "PAA", param = paa)
+
+# Validate parameters
 descriptorName <- descriptorSetting$method
 descriptorParam <- descriptorSetting$param
+val_param <- validatePAAdescriptorparam(descriptorParam)
 
 # First compute descriptor at each point, and transform the univariate time series to multivariate one
 p_subsequences <- samplingSequencesIdx(p, seqlen, 1:lenp)$subsequences
 q_subsequences <- samplingSequencesIdx(q, seqlen, 1:lenq)$subsequences
+
+######################################################################
+# Test PAA Descriptor step by step
+val_param <- validatePAAparam(val_param)
+len <- length(p_subsequences[[1]])
+
+switch(val_param$priority,
+       'segNum' = {
+         segNum <- val_param$segNum
+         segLen <- floor(len / segNum)
+         
+         if (segLen < 1) {
+           segNum <- 1
+           segLen <- len
+         }
+       },
+       'segLen' = {
+         segLen <- val_param$segLen
+         segNum <- floor(len / segLen)
+         
+         if (segNum < 1) {
+           segNum <- 1
+           segLen <- len
+         }
+       }
+)
+
+val_params <- list(
+  'priority' = val_param$priority,
+  'segNum' = segNum,
+  'segLen' = segLen
+)
+
+if (segNum * segLen < len) {
+  segLens <- c(rep(segLen, segNum - 1), len - segLen * (segNum - 1))
+} else if (segNum * segLen == len) {
+  segLens <- rep(segLen, segNum)
+} else {
+  segLens <- c(rep(segLen, segNum - 1), segLen - (segLen * segNum - len))
+}
+
+idx_seg <- c(0, cumsum(segLens))
+segs <- numeric(segNum)
+for (i in 1:segNum) {
+  segs[i] <- mean(p[(idx_seg[i] + 1):idx_seg[i + 1], 1])
+}
+######################################################################
 
 # Compute descriptor of sequence p
 p_nsubsequences <- length(p_subsequences)
