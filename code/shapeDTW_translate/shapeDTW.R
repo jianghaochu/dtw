@@ -10,7 +10,7 @@ shapeDTW <- function(p, q, seqlen, descriptorSetting = NULL, metric = "Euclidean
   
   p <- p %>% as.data.frame() 
   q <- q %>% as.data.frame()
-  
+
   lenp <- nrow(p)
   lenq <- nrow(q)
   
@@ -28,10 +28,10 @@ shapeDTW <- function(p, q, seqlen, descriptorSetting = NULL, metric = "Euclidean
     numLevels <- 3
     dwt <- validateDWTdescriptorparam()
     dwt$numLevels <- numLevels
-    
-    self <- NULL
-    
-    descriptorSetting <- list(method = "HOG1D", param = hog)
+
+    # descriptorSetting = NULL, descriptor HOG1D will be applied 
+    #descriptorSetting <- list(method = "HOG1D", param = hog)
+    descriptorSetting <- list(method = "PAA", param = paa)
   }
   
   # First compute descriptor at each point, and transform the univariate time series to multivariate one
