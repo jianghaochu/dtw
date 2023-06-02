@@ -5,25 +5,26 @@ using namespace Rcpp;
 // [[Rcpp::export]]
 List fwt1step(NumericVector s, NumericVector h, NumericVector g) {
 	
-	int mask = length(s);
-	int N = mask / 2;
-	int M = length(h);
+	int mask, N, M;
+    mask = s.length();
+	N = mask / 2;
+	M = h.length();
 
 	NumericVector sout(N);
 	NumericVector dout(N);
 	
 	int index = 0;
-	for (k = 0; k < N; k++) {
-		sout[k] = 0;
-		dout[k] = 0;
-		for (int n = 0; n < M - 1; n++) {
-			index = (n + 2 * k) % mask;
-			sout[k] += h[n] * s[index];
-			dout[k] += g[n] * s[index];
+	for (int i = 0; i < N; i++) {
+		sout(i) = 0;
+		dout(i) = 0;
+		for (int j = 0; j < M - 1; j++) {
+			index = (j + 2 * i) % mask;
+			sout(i) += h(j) * s(index);
+			dout(i) += g(j) * s(index);
 		}
 	}
 
-	out = List();
+	List out;
 	out["sout"] = sout;
 	out["dout"] = dout;
 
