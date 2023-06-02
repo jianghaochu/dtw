@@ -13,6 +13,8 @@ HOG feature descriptor is calculated on a fixed aspect ratio of patches of an im
 #### Step 2: Calculate Gradients
 The next step is to calculate the gradient for every pixel in the image. Gradients are the small change in the $x$ and $y$ directions. This process will give two new matrices – one storing gradients in the $x$-direction ($G_x$) and the other storing gradients in the $y$-direction ($G_y$). This is similar to using a **Sobel Kernel** of size $1$. The magnitude would be higher when there is a sharp change in intensity, such as around the edges.
 
+![HOG_example](https://github.com/jianghaochu/dtw/assets/31481788/934abba5-fb2d-485a-903d-19d8c7a67075)
+
 #### Step 3: Calculate the Magnitude and Orientation
 The gradients calculated in the **Step 2** will determine the magnitude and direction for each pixel value. For this step, the Pythagoras theorem is used to calculate the ``Total Gradient Magnitude``, which is given by
 $$\text{Total Gradient Magnitude} = \sqrt{G_x^2 + G_y^2}$$
