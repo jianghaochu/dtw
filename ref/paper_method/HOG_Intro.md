@@ -24,13 +24,16 @@ $$tan(\phi) = G_y/G_x$$
 $$\phi = atan(G_y/G_x)$$
 
 #### Step 4: Calculate Histogram of Gradients in $8 \times 8$ cells ($9 \times 1$)
+
+<img width="781" alt="HOG_Block vs Cell" src="https://github.com/jianghaochu/dtw/assets/31481788/f6fb4571-ad78-49f7-809e-0638d08c4fea">
+
 + **_Method 1:_** generate a frequency table that denotes angles and the occurrence of these angles in the image. This frequency table can be used to generate a histogram with angle values on the $x$-axis and the frequency on the $y$-axis.
 + **_Method 2:_** pre-determine the bin size, like $20$, then the number of buckets is $9$. Again, for each pixel, we will check the orientation, and store the frequency of the orientation values in the form of a $9 \times 1$ matrix. 
 + **_Method 3:_** use the weighted gradient magnitude instead of frequency to fill the values in the matrix. For example, orientation is $36$ (in the bin of 20 - 40) and magnitude is $13.6$, then $20: (40-36)/20 \cdot 13.6$, while $40: (36-20)/20 \cdot 13.6$.
 
 The histograms created in the HOG feature descriptor are not generated for the whole image. Instead, the image is divided into $8 \times 8$ cells, and the histogram of oriented gradients is computed for each cell. By doing so, we get the features (or histogram) for the smaller patches which in turn represent the whole image.
 
-#### Step 5: Normalize Gradients in $16 \times 16$ Cell ($36 \times 1$)
+#### Step 5: Normalize Gradients in $16 \times 16$ Block ($36 \times 1$)
 Although we already have the HOG features created for the $8 \times 8$ cells of the image, the gradients of the image are sensitive to the overall lighting. This means that for a particular picture, some portion of the image would be very bright as compared to the other portions. This lighting variation can be reduced by normalizing the gradients by taking $16 × 16$ blocks (four $8 \times 8$ cells). 
 
 Here, we will be combining four $8 \times 8$ cells to create a  $16 \times 16$  block. And we already know that each $8 \times 8$ cell has a $9 \times 1$ matrix for a histogram. So, we would have four $9 \times 1$ matrices or a single $36 \times 1$ matrix. To normalize this matrix, we will divide each of these values by the square root of the sum of squares of the values. Mathematically, for a given vector $V$:
