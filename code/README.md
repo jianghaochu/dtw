@@ -1,5 +1,5 @@
 ## To-do List
-- [ ] Understanding of HOG1
+- [X] Understanding of HOG1
 
 - [ ] Comparison table presenting different descriptors
 
