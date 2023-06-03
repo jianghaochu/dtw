@@ -19,7 +19,7 @@ I see a lot of squiggly underlines--coding suggestions--in VS Code)
 
 - [ ] Require further test on different datasets
 
-- [ ] The distance calculation in ``dist.cpp`` is not aligned with ``dist2.R``
+- [X] The distance calculation in ``dist.cpp`` is not aligned with ``dist2.R``
 
 
 ## Update - 05/27/2023
