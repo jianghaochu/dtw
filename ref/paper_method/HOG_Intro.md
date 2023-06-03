@@ -13,7 +13,7 @@ HOG feature descriptor is calculated on a fixed aspect ratio of patches of an im
 #### Step 2: Calculate Gradients
 The next step is to calculate the gradient for every pixel in the image. Gradients are the small change in the $x$ and $y$ directions. This process will give two new matrices – one storing gradients in the $x$-direction ($G_x$) and the other storing gradients in the $y$-direction ($G_y$). This is similar to using a **Sobel Kernel** of size $1$. The magnitude would be higher when there is a sharp change in intensity, such as around the edges.
 
-![HOG_example](https://github.com/jianghaochu/dtw/assets/31481788/934abba5-fb2d-485a-903d-19d8c7a67075)
+![HOG_example](https://github.com/jianghaochu/dtw/assets/31481788/e78ffc24-0f1b-4e22-af8c-559a13acca55)
 
 #### Step 3: Calculate the Magnitude and Orientation
 The gradients calculated in the **Step 2** will determine the magnitude and direction for each pixel value. For this step, the Pythagoras theorem is used to calculate the ``Total Gradient Magnitude``, which is given by
@@ -25,6 +25,7 @@ $$\phi = atan(G_y/G_x)$$
 
 #### Step 4: Calculate Histogram of Gradients in $8 \times 8$ cells ($9 \times 1$)
 
+<p align="center">
 <img width="781" alt="HOG_Block vs Cell" src="https://github.com/jianghaochu/dtw/assets/31481788/f6fb4571-ad78-49f7-809e-0638d08c4fea">
 
 + **_Method 1:_** generate a frequency table that denotes angles and the occurrence of these angles in the image. This frequency table can be used to generate a histogram with angle values on the $x$-axis and the frequency on the $y$-axis.
