@@ -37,6 +37,7 @@ Here, we will be combining four $8 \times 8$ cells to create a  $16 \times 16$  
 $$V  = (a_1, a_2, \dots, a_m)$$
 $$r = \sqrt{a_1^2 + a_2^2 + \dots + a_m^2}$$
 $$\text{Normalized Vector} = (a_1/r, a_2/r, \dots, a_m/r)$$
+where $m = 36$ for the above illustration.
 
 #### Step 6: Features for the Complete Image
 
