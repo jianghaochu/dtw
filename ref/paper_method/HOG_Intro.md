@@ -1,4 +1,4 @@
-### Histogram of Oriented Gradients (HOG) Feature Descriptor
+### [Histogram of Oriented Gradients (HOG) Feature Descriptor](https://www.analyticsvidhya.com/blog/2019/09/feature-engineering-images-introduction-hog-feature-descriptor/#h-step-1-preprocess-the-data-64-x-128)
 
 A feature descriptor is a representation of an image or an image patch that simplifies the image by extracting useful information and throwing away extraneous information. Typically, a feature descriptor converts an image of size $width \times height \times 3$ (channels ) to a feature vector / array of length $n$. Clearly, the feature vector is not useful for the purpose of viewing the image. But, it is very useful for tasks like image recognition and object detection. HOG is not only able to identify the image edge, but also provide the edge direction as well. This is done by extracting the gradient and orientation (magnitude and direction) of the edges.
 
