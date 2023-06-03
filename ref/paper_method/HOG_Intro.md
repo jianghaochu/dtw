@@ -26,7 +26,7 @@ $$\phi = atan(G_y/G_x)$$
 #### Step 4: Calculate Histogram of Gradients in $8 \times 8$ cells ($9 \times 1$)
 + **Method 1:** generate a frequency table that denotes angles and the occurrence of these angles in the image. This frequency table can be used to generate a histogram with angle values on the $x$-axis and the frequency on the $y$-axis.
 + **Method 2:** pre-determine the bin size, like $20$, then the number of buckets is $9$. Again, for each pixel, we will check the orientation, and store the frequency of the orientation values in the form of a $9 \times 1$ matrix. 
-+ **Method 3:** use the weighted gradient magnitude instead of frequency to fill the values in the matrix - Bin $20-40$, orientation is $36$ and magnitude is $13.6$, then $20: (40-36)/20 \cdot 13.6$, while $40: (36-20)/20 \cdot 13.6$.
++ **Method 3:** use the weighted gradient magnitude instead of frequency to fill the values in the matrix. For example, orientation is $36$ (in the bin of 20 - 40) and magnitude is $13.6$, then $20: (40-36)/20 \cdot 13.6$, while $40: (36-20)/20 \cdot 13.6$.
 
 The histograms created in the HOG feature descriptor are not generated for the whole image. Instead, the image is divided into $8 \times 8$ cells, and the histogram of oriented gradients is computed for each cell. By doing so, we get the features (or histogram) for the smaller patches which in turn represent the whole image.
 
