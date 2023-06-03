@@ -1,4 +1,5 @@
 #include <Rcpp.h>
+#include <cmath>
 
 using namespace Rcpp;
 
@@ -28,7 +29,7 @@ NumericMatrix dist2(NumericMatrix x, NumericMatrix c) {
     for (int i=0; i<ncentres; i++) {
         for (int j=0; j<ndata; j++) {
             NumericVector diff = x(j, _) - c(i, _);
-            n2(j, i) = std::inner_product(diff.begin(), diff.end(), diff.begin(), 0);
+            n2(j, i) = std::sqrt(std::inner_product(diff.begin(), diff.end(), diff.begin(), 0.0));
         }
     }
 
