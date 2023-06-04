@@ -1,4 +1,4 @@
-shapeDTW <- function(p, q, seqlen, descriptorSetting = NULL, metric = "Euclidean") {
+shapeDTW <- function(p, q, seqlen, wt_func, descriptorSetting = NULL, metric = "Euclidean") {
 
   if (!is.vector(p) || !is.vector(q)) {
     stop("Only support univariate time series\n")
@@ -60,8 +60,11 @@ shapeDTW <- function(p, q, seqlen, descriptorSetting = NULL, metric = "Euclidean
   # Match multivariate time series 'p_descriptors' & 'q_descriptors'
   switch(metric,
          "Euclidean" = {
-           d <- dist2(p_descriptors, q_descriptors)
-           d <- sqrt(d)
+           if (missing(wt_func)) {
+             d <- dist2(p_descriptors, q_descriptors) # Have performed sqrt in dist2 function
+           } else {
+             d <- dist2(p_descriptors, q_descriptors, wt_func = wt_func)
+           }
          },
          "chi-square" = {
            d <- hist_cost_2(p_descriptors, q_descriptors)
