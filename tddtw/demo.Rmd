@@ -1,0 +1,11 @@
+---
+title: "Test TDDTW"
+output: html_notebook
+---
+
+```{r}
+library(devtools)
+library(data.table)
+load_all(".")
+```
+
