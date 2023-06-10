@@ -1,3 +1,11 @@
+## Plan
+- [ ] Complete prediction exercise (BSTS: Housing Market; ML: Stock Market) 
+to verify TD-ShapeDTW results
+
+- [ ] Complete R Package
+
+- [ ] Complete two posts for BSTS and ML, respectively
+
 ## To-do List
 - [X] Understanding of HOG1
 
@@ -7,7 +15,6 @@
 
 - [ ] Do we need to follow some coding style rules (As opening scripts, 
 I see a lot of squiggly underlines--coding suggestions--in VS Code)
-
 
 ## Q & A - 05/27/2023
 
