@@ -8,8 +8,8 @@ shapeDTW <- function(p, q, seqlen, wt_func, descriptorSetting = NULL, metric = "
     metric <- "Euclidean"
   }
   
-  p <- p %>% as.data.frame() 
-  q <- q %>% as.data.frame()
+  p <- as.data.frame(p) 
+  q <- as.data.frame(q)
 
   lenp <- nrow(p)
   lenq <- nrow(q)
