@@ -1,3 +1,10 @@
+## Causal Procedure
+1. tune hyperparameters
+   + $g$ in both relative and absolute weight functions
+   + num_query: number of control seq's in causal prediction
+2. how to leverage recent trend in $X_t$ when predicting $y_t$ in bsts
+   (guess: td_shapedtw might outperform other algorithms when we use data at a low (e.g., zipcode) granularity.)
+
 ## Plan
 - [ ] Complete prediction exercise (BSTS: Housing Market; ML: Stock Market) 
 to verify TD-ShapeDTW results
