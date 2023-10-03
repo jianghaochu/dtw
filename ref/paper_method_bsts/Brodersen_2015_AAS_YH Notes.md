@@ -4,16 +4,14 @@ Some thoughts
   
   + Current options in BSTS
   
-  $$
-  \begin{array}{rl}
-\text{static: }&
-\bold x_t^\text T\beta \\~\\
+$$
+\begin{array}{rl}
+\text{static: }&\bold x_t^\text T\beta \\~\\
 
-\text{dynamic: }&
-\bold x_t^\text T\beta_t =\sum_{j=1}^Jx_{j,t}\beta_{j,t}\\~\\
+\text{dynamic: }&\bold x_t^\text T\beta_t =\sum_{j=1}^Jx_{j,t}\beta_{j,t}\\~\\
 &\beta_{j, t+1}=\beta_{j,t}+\eta_{\beta,j,t}\text{ where }\eta_{\beta,j,t}\sim\cal N(0,\sigma^2_{\beta_j})
 \end{array}
-  $$
+$$
   
   + Feature of resulting pairs from td-dtw
     
